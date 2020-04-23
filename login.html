@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <link href="css/login.css" rel="stylesheet" type="text/css">
+        </link>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+    </head>
+    
+    <body>
+        <div class="page">
+    
+            <!--når submit knappen aktiveres kaldes funktionen loginData-->
+            <form action="" id="loginForm" onsubmit="loginData(event)">
+                
+                <div class="signin">
+                    <!--Indsæt billede af billede-->
+                    <h1>Sign In</h1>
+                    <hr>
+    
+                    <div class="column">
+                        <label for="psw"><b>Password</b></label>
+                        <div class="space">
+                            <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+                        </div>
+                    </div>
+    
+                    <!--Hvis oplysningerne er forkerte kalder den wrongMsg, så der kommer en popup-->
+                    <div class="wrong" id="wrongPass">
+                    <p id="wrongMsg"></p>
+                    </div>
+    
+                    <hr>
+    
+                    <!--Laver knappen til at logge ind-->
+                    <button type="submit" class="button">Login</button>
+                </div>
+            </form>
+        </div>
+
+        <script>
+            function loginData(event){
+                event.preventDefault();
+                var dataPass = document.getElementById("psw");
+
+                if(dataPass.value == "colors"){
+                    location.replace(""); //Indsæt siden der skal linkes til i ""
+                }
+            }
+
+            //Lav drag and drop her hvor der skal kunne sættes billeder i rigtig rækkefølge
+            /*
+                Den skal opsættes sådan at der er 3 billeder der skal sættes i en bestemt rækkefølge
+                Det vil sige at der skal defineres nogle positioner og der skal defineres ID'er til billederne
+                Positionerne skal være præcise og billederne
+            */
+        </script>
+    </body>
+</html>
