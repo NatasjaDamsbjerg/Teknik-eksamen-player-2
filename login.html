@@ -16,7 +16,10 @@
                 
                 <div class="signin">
                     <!--Indsæt billede af billede-->
-                    <h1>Sign In</h1>
+                    <h1>Find the password</h1>
+
+                    <hr>
+                    <img src="images/jars.png">
                     <hr>
     
                     <div class="column">
@@ -25,13 +28,13 @@
                             <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
                         </div>
                     </div>
-    
+
                     <!--Hvis oplysningerne er forkerte kalder den wrongMsg, så der kommer en popup-->
                     <div class="wrong" id="wrongPass">
-                    <p id="wrongMsg"></p>
+                    <p>The password is wrong, try again</p>
                     </div>
-    
-                    <hr>
+
+                    <hr id=hr2>
     
                     <!--Laver knappen til at logge ind-->
                     <button type="submit" class="button">Login</button>
@@ -45,16 +48,11 @@
                 var dataPass = document.getElementById("psw");
 
                 if(dataPass.value == "colors"){
-                    location.replace(""); //Indsæt siden der skal linkes til i ""
+                    location.replace("huluBulu.html"); 
+                }else{
+                    document.getElementById("wrongPass").style.display = "block";
                 }
             }
-
-            //Lav drag and drop her hvor der skal kunne sættes billeder i rigtig rækkefølge
-            /*
-                Den skal opsættes sådan at der er 3 billeder der skal sættes i en bestemt rækkefølge
-                Det vil sige at der skal defineres nogle positioner og der skal defineres ID'er til billederne
-                Positionerne skal være præcise og billederne
-            */
         </script>
     </body>
 </html>
