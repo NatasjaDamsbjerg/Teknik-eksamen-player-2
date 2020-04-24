@@ -1,14 +1,15 @@
 body {
     display: flex;
     justify-content: center;
+    text-align: center;
 }
 
 .page {
-    width: 250px;
+    width: 375px;
 }
 
 input[type=password] {
-    width: 90%;
+    width: 45%;
     padding: 7px;
     margin: 2px 0 10px 0;
     border-radius: 5px;
@@ -18,6 +19,14 @@ input[type=password] {
 input[type=password]:focus {
     background-color: rgb(202, 198, 198);
     outline: none;
+}
+
+input[placeholder="Enter Password"] {
+    text-align: center;
+}
+
+#hr2 {
+    width: 50%;
 }
 
 .button {
