@@ -9,37 +9,27 @@
 
   </head>
   <body>
-
-
     <!--Formen, der kalder funktionen tryComb, når submit knappen bruges-->
   <form action="" id="combiForm" onsubmit="tryComb(event)">
 
-
     <!--den store kasse-->
     <div id="cartDiv">
-
 
     <!--De 3 små kasser-->
       <div id="item1"></div>
       <div id="item2"></div>
       <div id="item3"></div>
-    
     </div>
-   
+  
     <!--De 3 objekter-->
     <img src="assets/toy1.png" alt="Bear" id="toy1" class="toy">
     <img src="assets/toy2.png" alt="Duck" id="toy2" class="toy">
     <img src="assets/toy3.png" alt="Batman" id="toy3" class="toy">
 
-
     <button type="submit"></button>
 
   </form>
-
-
     <script>
-
-
 //Variabel til at thekke om de 3 objekter er placeret korrekt
       var objectCheckItem1 = false;
       var objectCheckItem2 = false;
@@ -49,7 +39,6 @@
 		  $("#toy1").draggable({revert: false});
 		  $("#toy2").draggable({revert: false});
 		  $("#toy3").draggable({revert: false});
-
 
 //opsætter forholdene for hvilket objekt den første kasse skal acceptere et objekt. Det er så toy1 der kan accepteres
       $("#item1").droppable({
@@ -67,7 +56,6 @@
         accept: "#toy1",
         disabled: false,
 		  });
-    
 
     //opsætter forholdene for hvilket objekt den anden kasse skal acceptere et objekt. Det er så toy2 der kan accepteres
       $("#item2").droppable({
@@ -87,7 +75,6 @@
 
       });
 
-
       //opsætter forholdene for hvilket objekt den tredje kasse skal acceptere et objekt. Det er så toy3 der kan accepteres
       $("#item3").droppable({
           activeClass: "highlight",
@@ -105,7 +92,6 @@
         disabled: false,
 
       });
-
 
 //Funktionen til at tjekke om objekterne er placeret korrekt
       function tryComb(){
