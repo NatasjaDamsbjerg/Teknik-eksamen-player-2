@@ -12,14 +12,14 @@
         <div class="page">
     
             <!--når submit knappen aktiveres kaldes funktionen loginData-->
-            <form action="" id="loginForm" onsubmit="loginData(event)">
+            <form action="" id="loginForm" onsubmit="passData(event)">
                 
                 <div class="signin">
                     <!--Indsæt billede af billede-->
                     <h1>Find the password</h1>
 
                     <hr>
-                    <img src="images/jars.png">
+                    <img src="assets/jars.png">
                     <hr>
     
                     <div class="column">
@@ -43,7 +43,7 @@
         </div>
 
         <script>
-            function loginData(event){
+            function passData(event){
                 event.preventDefault();
                 var dataPass = document.getElementById("psw");
 
