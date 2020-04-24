@@ -35,7 +35,9 @@
 
     <script>
 
-      var objectCheckItem1, objectCheckItem2, objectCheckItem3;
+      var objectCheckItem1 = false;
+      var objectCheckItem2 = false;
+      var objectCheckItem3 = false;
 
 
 		  $("#toy1").draggable({revert: false});
@@ -46,38 +48,39 @@
         activeClass: "highlight",
         hoverClass: "hoverDroppable",
           drop: function(event, ui){
-            objectCheckItem1 = true;
             var itemAlt = $(ui.draggable).attr("alt");
-            alert("Item added : " + itemAlt);
+            objectCheckItem1 = true;
           },
           out: function(event, ui){
             objectCheckItem1 = false;
-		    	},
-
+          },
         accept: "#toy1",
         disabled: false,
-
 		  });
     
       $("#item2").droppable({
         activeClass: "highlight",
         hoverClass: "hoverDroppable",
           drop: function(event, ui){
+              objectCheckItem2 = true;
             var itemAlt = $(ui.draggable).attr("alt");
-            alert("Item added : " + itemAlt);
           },
-
+          out: function(event, ui){
+            objectCheckItem2 = false;
+          },
         accept: "#toy2",
         disabled: false,
 
       });
-
       $("#item3").droppable({
           activeClass: "highlight",
           hoverClass: "hoverDroppable",
           drop: function(event, ui){
+            objectCheckItem3 = true;
             var itemAlt = $(ui.draggable).attr("alt");
-            alert("Item added : " + itemAlt);
+          },
+          out: function(event, ui){
+            objectCheckItem3 = false;
           },
 
         accept: "#toy3",
@@ -85,6 +88,18 @@
 
       });
 
+      function tryComb(){
+        event.preventDefault();
+        if(objectCheckItem1 == true && objectCheckItem2 == true && objectCheckItem3 == true){
+          location.replace("color.html");
+        }else{
+          location.reload();
+        }
+      }
+
+      console.log(objectCheckItem1);
+      console.log(objectCheckItem2);
+      console.log(objectCheckItem3);
 
     </script>
   </body>
