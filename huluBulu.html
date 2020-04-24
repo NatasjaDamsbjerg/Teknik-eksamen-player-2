@@ -10,7 +10,7 @@
   </head>
   <body>
 
-
+  <form action="" id="combiForm" onsubmit="tryComb(event)">
     <div id="cartDiv">
     
       <div id="item1"></div>
@@ -27,12 +27,64 @@
  
     <img src="assets/toy3.png" alt="Batman" id="toy3" class="toy">
 
+
+    <button type="submit"></button>
+
+  </form>
+
+
     <script>
 
+      var objectCheckItem1, objectCheckItem2, objectCheckItem3;
 
-		  $("#toy1").draggable({revert: true});
-		  $("#toy2").draggable({revert: true});
-		  $("#toy3").draggable({revert: true});
+
+		  $("#toy1").draggable({revert: false});
+		  $("#toy2").draggable({revert: false});
+		  $("#toy3").draggable({revert: false});
+
+      $("#item1").droppable({
+        activeClass: "highlight",
+        hoverClass: "hoverDroppable",
+          drop: function(event, ui){
+            objectCheckItem1 = true;
+            var itemAlt = $(ui.draggable).attr("alt");
+            alert("Item added : " + itemAlt);
+          },
+          out: function(event, ui){
+            objectCheckItem1 = false;
+		    	},
+
+        accept: "#toy1",
+        disabled: false,
+
+		  });
+    
+      $("#item2").droppable({
+        activeClass: "highlight",
+        hoverClass: "hoverDroppable",
+          drop: function(event, ui){
+            var itemAlt = $(ui.draggable).attr("alt");
+            alert("Item added : " + itemAlt);
+          },
+
+        accept: "#toy2",
+        disabled: false,
+
+      });
+
+      $("#item3").droppable({
+          activeClass: "highlight",
+          hoverClass: "hoverDroppable",
+          drop: function(event, ui){
+            var itemAlt = $(ui.draggable).attr("alt");
+            alert("Item added : " + itemAlt);
+          },
+
+        accept: "#toy3",
+        disabled: false,
+
+      });
+
 
     </script>
   </body>
