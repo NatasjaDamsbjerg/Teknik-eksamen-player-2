@@ -10,21 +10,25 @@
   </head>
   <body>
 
-  <form action="" id="combiForm" onsubmit="tryComb(event)">
-    <div id="cartDiv">
-    
-      <div id="item1"></div>
 
+    <!--Formen, der kalder funktionen tryComb, når submit knappen bruges-->
+  <form action="" id="combiForm" onsubmit="tryComb(event)">
+
+
+    <!--den store kasse-->
+    <div id="cartDiv">
+
+
+    <!--De 3 små kasser-->
+      <div id="item1"></div>
       <div id="item2"></div>
-      
       <div id="item3"></div>
     
     </div>
    
+    <!--De 3 objekter-->
     <img src="assets/toy1.png" alt="Bear" id="toy1" class="toy">
- 
     <img src="assets/toy2.png" alt="Duck" id="toy2" class="toy">
- 
     <img src="assets/toy3.png" alt="Batman" id="toy3" class="toy">
 
 
@@ -35,15 +39,19 @@
 
     <script>
 
+
+//Variabel til at thekke om de 3 objekter er placeret korrekt
       var objectCheckItem1 = false;
       var objectCheckItem2 = false;
       var objectCheckItem3 = false;
 
-
+//De 3 objekter gøres "draggable"
 		  $("#toy1").draggable({revert: false});
 		  $("#toy2").draggable({revert: false});
 		  $("#toy3").draggable({revert: false});
 
+
+//opsætter forholdene for hvilket objekt den første kasse skal acceptere et objekt. Det er så toy1 der kan accepteres
       $("#item1").droppable({
         activeClass: "highlight",
         hoverClass: "hoverDroppable",
@@ -54,10 +62,14 @@
           out: function(event, ui){
             objectCheckItem1 = false;
           },
+
+//definerer objektet der accepteres af kassen
         accept: "#toy1",
         disabled: false,
 		  });
     
+
+    //opsætter forholdene for hvilket objekt den anden kasse skal acceptere et objekt. Det er så toy2 der kan accepteres
       $("#item2").droppable({
         activeClass: "highlight",
         hoverClass: "hoverDroppable",
@@ -68,10 +80,15 @@
           out: function(event, ui){
             objectCheckItem2 = false;
           },
+
+ //definerer objektet der accepteres af kassen
         accept: "#toy2",
         disabled: false,
 
       });
+
+
+      //opsætter forholdene for hvilket objekt den tredje kasse skal acceptere et objekt. Det er så toy3 der kan accepteres
       $("#item3").droppable({
           activeClass: "highlight",
           hoverClass: "hoverDroppable",
@@ -83,16 +100,27 @@
             objectCheckItem3 = false;
           },
 
+//definerer objektet der accepteres af kassen
         accept: "#toy3",
         disabled: false,
 
       });
 
+
+//Funktionen til at tjekke om objekterne er placeret korrekt
       function tryComb(){
+
+        //Gør at siden ikke bare pr default reloader
         event.preventDefault();
+
+        //Tjekker om alle accepts er true
         if(objectCheckItem1 == true && objectCheckItem2 == true && objectCheckItem3 == true){
+
+          //er de true skal spilleren sendes til "color.html"
           location.replace("color.html");
         }else{
+
+          //er de ikke true skal spillerens side reloade
           location.reload();
         }
       }
