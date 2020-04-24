@@ -10,7 +10,7 @@
     <body>
         <div class="page">
     
-            <!--når submit knappen aktiveres kaldes funktionen loginData-->
+            <!--når submit knappen aktiveres kaldes funktionen passData-->
             <form action="" id="loginForm" onsubmit="passData(event)">
                 
                 <div class="signin">
@@ -42,12 +42,17 @@
         </div>
 
         <script>
+            //Her opsættes funktionen passData
             function passData(event){
+                //event.preventDefault() gør at siden ikke bare reloader, som den normalt ville gøre
                 event.preventDefault();
+                //definere dataPass til at være elementet "password"'s ide, som her er psw
                 var dataPass = document.getElementById("psw");
 
+                //Hvis colors skrives i password-feltet, så skiftes lokationen ti huluBulu.html
                 if(dataPass.value == "colors"){
                     location.replace("huluBulu.html"); 
+                //Ellers ændre den style på vores tekst wrongPass, sådan at den bliver synlig
                 }else{
                     document.getElementById("wrongPass").style.display = "block";
                 }
