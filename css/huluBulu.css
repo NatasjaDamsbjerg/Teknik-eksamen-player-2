@@ -5,6 +5,7 @@
     height: 160px;
     margin-right: auto;
     margin-left: auto;
+    position:relative;
   }
   #item1{
     position: relative;
@@ -40,16 +41,26 @@
     height: 150px;
     width: 150px;
     margin-bottom: 20px;
+    position:relative;
   }
 
   #toy2{
     height: 150px;
     width: 150px;
     margin-bottom: 20px;
+    position:relative;
   }
 
   #toy3{
     height: 150px;
     width: 150px;
     margin-bottom: 20px;
+    position:relative;
+  }
+
+
+  #combiButton{
+    position: relative;
+    margin-left:50%;
+    margin-right:50%;
   }
